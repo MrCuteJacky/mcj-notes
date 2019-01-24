@@ -1,5 +1,5 @@
 ## Notes
-使用Angular開發一個靜態網頁服務，透過Google Sheets API存資料。
+使用Angular開發的服務，透過Google Sheets API存資料。
 
 ### Tools
 1. Angular 6
