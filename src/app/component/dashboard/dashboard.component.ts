@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
 
   notes: Note[] = [];
 
-  photo: string;
+  photo: string = '../../assets/images/J.png';
 
   constructor(
     private googleSpreadsheetsApi: GoogleSpreadsheetsApiService,
