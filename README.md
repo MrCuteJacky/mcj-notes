@@ -1,5 +1,5 @@
 ## Notes
-使用Angular開發的服務，透過Google Sheets API存資料。
+「[Notes](https://mrcutejacky.github.io/mcj-notes/)」是使用Angular開發的服務，透過Google Sheets API存資料。
 
 ### Tools
 1. Angular 6
