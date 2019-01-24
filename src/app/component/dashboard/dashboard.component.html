@@ -1,0 +1,48 @@
+<block-ui>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand d-inline-block align-top" href="#">
+        <img *ngIf="photo" [src]="photo" class="rounded" width="30" height="30" alt="..." />
+        Notes
+      </a>
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right" (click)="isShowAddForm = !isShowAddForm" [attr.aria-expanded]="!isShowAddForm" aria-controls="add">
+        <i *ngIf="!isShowAddForm" class="fas fa-plus"></i>
+        <i *ngIf="isShowAddForm" class="fas fa-minus"></i>
+      </button>
+  </nav>
+  <div class="table-responsive" style="min-height: calc(100vh - 125px)">
+    <div id="add" class="card-body text-white bg-secondary collapse" [collapse]="!isShowAddForm" #collapse="bs-collapse">
+      <app-add (onAdd)="onAdd($event)"></app-add>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="w-100">Message</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes">
+          <th scope="row">{{note.id}}</th>
+          <td data-toggle="collapse" (click)="note.isCollapsed = !note.isCollapsed; onView(note.isCollapsed, note);" [attr.aria-expanded]="!note.isCollapsed">
+            <div class="font-weight-bolder text-justify">
+              {{note.title}}
+            </div>
+            <div id="node_message_{{note.id}}" class="text-justify py-2" [collapse]="!note.isCollapsed">
+              {{note.message}}
+            </div>
+          </td>
+          <td class="text-right"><button class="btn btn-danger btn-sm" (click)="remove(note)"><i class="fas fa-trash-alt"></i></button></td>
+        </tr>
+        <tr *ngIf="notes.length == 0">
+          <td></td>
+          <td class="text-secondary">There is no message.</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-body bg-light text-dark text-center">
+    <small>Copyright © 2019 MCJ studio.</small>
+  </div>
+</block-ui>
