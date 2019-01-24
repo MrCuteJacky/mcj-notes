@@ -11,6 +11,11 @@
 npm install
 ```
 
+### Run in local
+```console
+ng serve
+```
+
 ### Build Production
 ```console
 ng build --prod --output-path docs --base-href
