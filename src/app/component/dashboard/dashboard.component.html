@@ -4,8 +4,8 @@
       <img *ngIf="photo" [src]="photo" class="rounded mr-2" width="30" height="30" alt="..." />
       <span class="align-bottom">Notes</span>
     </a>
-    <div class="w-100">
-    </div>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    </ul>
     <button type="button" class="btn btn-outline-secondary btn-sm float-right" (click)="isShowAddForm = !isShowAddForm" [attr.aria-expanded]="!isShowAddForm" aria-controls="add">
       <i *ngIf="!isShowAddForm" class="fas fa-plus"></i>
       <i *ngIf="isShowAddForm" class="fas fa-minus"></i>
